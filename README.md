@@ -26,43 +26,6 @@ Users can also download a detailed CSV report of the issues found.
 
 ---
 
-# Challenges we ran into
-
-- Environment mismatch:  
-  Locally, I used Brave browser, but in deployment, I had to switch to Chromium and Chromedriver provided by Streamlit Cloud.
-
-- Driver discovery issues:  
-  Selenium would not automatically find the correct driver on cloud, so I had to explicitly use system paths:
-
-  ```python
-  service = Service("/usr/bin/chromedriver")
-  chrome_options.binary_location = "/usr/bin/chromium"
-  ```
-
-- Large page load times:  
-  Some websites take a long time to load, so I improved UX by showing a spinner during scan execution.
-
----
-
-# Accomplishments that we're proud of
-
-- A fully functional accessibility checker in under 100 lines of code.
-- Cross-environment compatibility (local + cloud).
-- Easy-to-use interface for non-developers.
-- Downloadable detailed CSV reports for audits.
-- A complete tool built using only the Python ecosystem.
-
----
-
-# What we learned
-
-- How important environment management is, especially when deploying browser automation to the cloud.
-- How to use axe-core in combination with Selenium for efficient accessibility audits.
-- The power of Streamlit in making interactive apps with minimal code.
-- The need for explicit paths and environment variables to avoid deployment issues.
-
----
-
 # What's next for Axess
 
 - Add support for scanning multiple pages in a single run.
